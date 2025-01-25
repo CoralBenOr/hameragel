@@ -37,15 +37,15 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 20px 40px; /* הגדלתי את הריווח */
-    font-size: 28px; /* הגדלתי את גודל הפונט */
+    padding: 30px 60px; /* הגדלתי עוד את הריווח */
+    font-size: 36px; /* הגדלתי את גודל הפונט */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #c0392b; /* אדום כהה */
-    transform: scale(1.15); /* הגדלתי את ההשפעה בזמן ריחוף */
+    transform: scale(1.2); /* הגדלתי את ההשפעה בזמן ריחוף */
 }
 
 button:disabled {
@@ -68,8 +68,8 @@ label {
 
 input[type="checkbox"] {
     margin-right: 20px; /* הגדלתי את הריווח */
-    width: 30px; /* הגדלתי את גודל הקוביה */
-    height: 30px; /* הגדלתי את גובה הקוביה */
+    width: 40px; /* הגדלתי את גודל הקוביה */
+    height: 40px; /* הגדלתי את גובה הקוביה */
 }
 
 /* קלט מספרי */
@@ -110,8 +110,8 @@ input:focus, select:focus {
 
 /* שינוי צבע למילה שהוגרלה במסך השני */
 #word-selected {
-    color: white; /* הופך את הטקסט ללבן */
-    font-size: 60px; /* גודל טקסט יותר גדול */
+    color: white !important; /* נוספתי !important כדי לוודא שהצבע משתנה */
+    font-size: 80px; /* הגדלתי את גודל הטקסט */
     font-weight: bold;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* הוספתי אפקט צל */
 }
