@@ -20,14 +20,14 @@ h1, h3 {
 
 /* כותרת ראשית */
 h1 {
-    font-size: 48px; /* הגדלתי את גודל הפונט */
+    font-size: 60px; /* הגדלתי עוד יותר את גודל הפונט */
     font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
 }
 
 /* כותרת משנה */
 h3 {
-    font-size: 32px; /* הגדלתי את גודל הפונט */
+    font-size: 40px; /* הגדלתי עוד יותר את גודל הפונט */
     color: #e74c3c; /* אדום */
 }
 
@@ -37,15 +37,15 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 15px 30px; /* הגדלתי את הריווח */
-    font-size: 24px; /* הגדלתי את גודל הפונט */
+    padding: 20px 40px; /* הגדלתי את הריווח */
+    font-size: 28px; /* הגדלתי את גודל הפונט */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #c0392b; /* אדום כהה */
-    transform: scale(1.1); /* הגדלתי את ההשפעה בזמן ריחוף */
+    transform: scale(1.15); /* הגדלתי את ההשפעה בזמן ריחוף */
 }
 
 button:disabled {
@@ -62,18 +62,18 @@ button:disabled {
 
 label {
     display: block;
-    font-size: 24px; /* הגדלתי את גודל הפונט */
+    font-size: 28px; /* הגדלתי את גודל הפונט */
     margin: 10px 0;
 }
 
 input[type="checkbox"] {
-    margin-right: 15px; /* הגדלתי את הריווח */
+    margin-right: 20px; /* הגדלתי את הריווח */
 }
 
 input[type="number"] {
-    padding: 15px; /* הגדלתי את הריווח */
-    font-size: 22px; /* הגדלתי את גודל הפונט */
-    width: 70px; /* הגדלתי את הרוחב */
+    padding: 20px; /* הגדלתי את הריווח */
+    font-size: 26px; /* הגדלתי את גודל הפונט */
+    width: 90px; /* הגדלתי את הרוחב */
     margin-top: 10px;
     border: none;
     border-radius: 5px;
@@ -82,18 +82,18 @@ input[type="number"] {
 /* אזור שגיאות */
 .error {
     color: #e74c3c; /* אדום */
-    font-size: 20px; /* הגדלתי את גודל הפונט */
+    font-size: 24px; /* הגדלתי את גודל הפונט */
     margin-top: 10px;
 }
 
 /* חלון מידע לשחקן */
 #player-info {
     background-color: rgba(52, 152, 219, 0.8); /* כחול חצי שקוף */
-    padding: 30px; /* הגדלתי את הריווח */
+    padding: 40px; /* הגדלתי את הריווח */
     border-radius: 10px;
     width: 80%;
     margin-top: 20px;
-    font-size: 28px; /* הגדלתי את גודל הפונט */
+    font-size: 34px; /* הגדלתי את גודל הפונט */
     text-align: center;
     color: white;
 }
@@ -103,4 +103,12 @@ input:focus, select:focus {
     outline: none;
     border: 2px solid #3498db; /* כחול זוהר */
     box-shadow: 0 0 10px rgba(52, 152, 219, 0.8);
+}
+
+/* שינוי צבע למילה שהוגרלה במסך השני */
+#word-selected {
+    color: white; /* הופך את הטקסט ללבן */
+    font-size: 48px; /* גודל טקסט יותר גדול */
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* הוספתי אפקט צל */
 }
