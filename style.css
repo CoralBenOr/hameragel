@@ -92,13 +92,14 @@ input[type="number"] {
 /* חלון מידע לשחקן */
 #player-info {
     background-color: rgba(52, 152, 219, 0.8); /* כחול חצי שקוף */
+    color: white;
     padding: 40px; /* הגדלתי את הריווח */
     border-radius: 10px;
     width: 80%;
     margin-top: 20px;
     font-size: 34px; /* הגדלתי את גודל הפונט */
     text-align: center;
-    color: white;
+    
 }
 
 /* התמקדות */
