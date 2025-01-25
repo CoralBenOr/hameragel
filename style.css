@@ -20,14 +20,14 @@ h1, h3 {
 
 /* כותרת ראשית */
 h1 {
-    font-size: 60px; /* הגדלתי עוד יותר את גודל הפונט */
+    font-size: 36px;
     font-weight: bold;
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 /* כותרת משנה */
 h3 {
-    font-size: 40px; /* הגדלתי עוד יותר את גודל הפונט */
+    font-size: 24px;
     color: #e74c3c; /* אדום */
 }
 
@@ -37,15 +37,15 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 30px 60px; /* הגדלתי עוד את הריווח */
-    font-size: 36px; /* הגדלתי את גודל הפונט */
+    padding: 15px 30px; /* הגדלת הרוחב והגובה של הכפתורים */
+    font-size: 22px; /* הגדלת הגופן */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #c0392b; /* אדום כהה */
-    transform: scale(1.2); /* הגדלתי את ההשפעה בזמן ריחוף */
+    transform: scale(1.1); /* הגדלת הכפתור בעת ריחוף */
 }
 
 button:disabled {
@@ -62,21 +62,18 @@ button:disabled {
 
 label {
     display: block;
-    font-size: 28px; /* הגדלתי את גודל הפונט */
+    font-size: 20px;
     margin: 10px 0;
 }
 
 input[type="checkbox"] {
-    margin-right: 20px; /* הגדלתי את הריווח */
-    width: 40px; /* הגדלתי את גודל הקוביה */
-    height: 40px; /* הגדלתי את גובה הקוביה */
+    margin-right: 10px;
 }
 
-/* קלט מספרי */
 input[type="number"] {
-    padding: 20px; /* הגדלתי את הריווח */
-    font-size: 26px; /* הגדלתי את גודל הפונט */
-    width: 90px; /* הגדלתי את הרוחב */
+    padding: 10px;
+    font-size: 18px;
+    width: 60px; /* הגדלת גודל הקלט */
     margin-top: 10px;
     border: none;
     border-radius: 5px;
@@ -85,21 +82,20 @@ input[type="number"] {
 /* אזור שגיאות */
 .error {
     color: #e74c3c; /* אדום */
-    font-size: 24px; /* הגדלתי את גודל הפונט */
+    font-size: 16px;
     margin-top: 10px;
 }
 
 /* חלון מידע לשחקן */
 #player-info {
     background-color: rgba(52, 152, 219, 0.8); /* כחול חצי שקוף */
-    color: white;
-    padding: 40px; /* הגדלתי את הריווח */
+    padding: 20px;
     border-radius: 10px;
     width: 80%;
     margin-top: 20px;
-    font-size: 34px; /* הגדלתי את גודל הפונט */
+    font-size: 24px; /* גודל טקסט גדול יותר */
     text-align: center;
-    
+    color: white;
 }
 
 /* התמקדות */
@@ -110,9 +106,9 @@ input:focus, select:focus {
 }
 
 /* שינוי צבע למילה שהוגרלה במסך השני */
-#word-selected {
-    color: white !important; /* נוספתי !important כדי לוודא שהצבע משתנה */
-    font-size: 80px; /* הגדלתי את גודל הטקסט */
+.word-selected {
+    color: white !important; /* נוודא שהצבע יהיה לבן */
+    font-size: 80px; /* גודל טקסט יותר גדול */
     font-weight: bold;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* הוספתי אפקט צל */
 }
