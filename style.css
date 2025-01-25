@@ -5,6 +5,10 @@ body {
   font-family: Arial, sans-serif;
   background: linear-gradient(to bottom, #000000, #000033);
   color: white;
+  display: flex;
+  justify-content: center; /* ממרכז את כל הדף */
+  align-items: center; /* ממרכז את כל הדף */
+  height: 100vh; /* משאיר את הדף בגובה מלא */
 }
 
 h1, h2 {
@@ -26,7 +30,8 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  text-align: center;
+  max-width: 100%; /* נוודא שהטקסט לא יפלט */
 }
 
 button {
@@ -63,6 +68,10 @@ button:hover {
     padding: 15px 25px;
     font-size: 1rem;
   }
+
+  .container {
+    padding: 10px; /* נותן מרווח פנימי */
+  }
 }
 
 /* Styling for the Player Screen */
@@ -83,4 +92,14 @@ button:hover {
   font-size: 2rem;
   text-align: center;
   color: white;
+}
+
+/* תיקון לחלוקה מיותרת במסך השני */
+.player-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
 }
