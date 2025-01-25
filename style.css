@@ -14,7 +14,7 @@ body {
 
 h1, h3 {
     font-family: 'Arial', sans-serif;
-    color: #3498db; /* כחול בהיר */
+    color: white; /* כחול בהיר */
     margin: 20px 0;
 }
 
@@ -68,6 +68,7 @@ label {
 }
 
 input[type="checkbox"] {
+    transform: scale(1.5); /* הגדלה ב-1.5 פעמים את ה-checkbox */
     margin-right: 20px;
 }
 
