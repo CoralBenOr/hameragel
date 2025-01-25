@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+    <title>תור השחקן</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        #start-turn, #next-turn, #main-menu {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #start-turn:hover, #next-turn:hover, #main-menu:hover {
+            background-color: #45a049;
+        }
+        #player-info {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #555;
+            display: none; /* מוסתר עד ללחיצה על "התחל" */
+        }
+        #next-turn, #main-menu {
+            display: none; /* כפתור "המשך" וכפתור "חזור למסך הראשי" מוסתרים בהתחלה */
+        }
+    </style>
+</head>
+<body>
+    <h1 id="player-title">תור שחקן 1</h1>
+    <button id="start-turn">התחל</button>
+    <div id="player-info"></div>
+    <button id="next-turn">המשך</button>
+    <button id="main-menu">חזור למסך הראשי</button>
+
+    <script>
+        // קריאת הנתונים מ-localStorage
+        const numPlayers = parseInt(localStorage.getItem("numPlayers"), 10);
+        const word = localStorage.getItem("selectedWord");
+        const spyIndex = Math.floor(Math.random() * numPlayers); // הגרלת המרגל
+        let currentPlayerIndex = 0; // מתחילים בשחקן הראשון
+
+        const startButton = document.getElementById("start-turn");
+        const nextButton = document.getElementById("next-turn");
+        const mainMenuButton = document.getElementById("main-menu");
+        const playerInfo = document.getElementById("player-info");
+        const playerTitle = document.getElementById("player-title");
+
+        // לחיצה על "התחל"
+        startButton.addEventListener("click", () => {
+            const isSpy = currentPlayerIndex === spyIndex;
+
+            // הצגת מידע לשחקן הנוכחי
+            playerInfo.style.display = "block";
+            playerInfo.textContent = isSpy 
+                ? "אתה המרגל!" 
+                : `המילה היא: ${word}`;
+
+            // הסתרת כפתור "התחל" והצגת כפתור "המשך"
+            startButton.style.display = "none";
+            nextButton.style.display = "inline-block";
+        });
+
+        // לחיצה על "המשך"
+        nextButton.addEventListener("click", () => {
+            // הסתרת המידע לשחקן הנוכחי
+            playerInfo.style.display = "none";
+
+            // מעבר לשחקן הבא
+            currentPlayerIndex++;
+
+            if (currentPlayerIndex < numPlayers) {
+                // עדכון הכותרת והכפתורים לתור הבא
+                playerTitle.textContent = `תור שחקן ${currentPlayerIndex + 1}`;
+                startButton.style.display = "inline-block";
+                nextButton.style.display = "none";
+            } else {
+                // סיום המשחק
+                playerTitle.textContent = "המשחק הסתיים!";
+                startButton.style.display = "none";
+                nextButton.style.display = "none";
+                playerInfo.style.display = "none";
+
+                // הצגת כפתור "חזור למסך הראשי"
+                mainMenuButton.style.display = "inline-block";
+            }
+        });
+
+        // לחיצה על "חזור למסך הראשי"
+        mainMenuButton.addEventListener("click", () => {
+            window.location.href = "open_screen.html"; // מחזיר את המשתמש למסך הראשי
+        });
+    </script>
+</body>
+</html>

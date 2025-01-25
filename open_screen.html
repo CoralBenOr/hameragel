@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+    <title>מסך פתיחה</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ברוכים הבאים למשחק</h1>
+    <h3>בחרו קטגוריות:</h3>
+    <div>
+        <label><input type="checkbox" value="סרטים" class="category"> סרטים</label><br>
+        <label><input type="checkbox" value="מקומות" class="category"> מקומות</label><br>
+        <label><input type="checkbox" value="חיות" class="category"> חיות</label><br>
+        <label><input type="checkbox" value="מאכלים" class="category"> מאכלים</label><br>
+        <label><input type="checkbox" value="מדינות" class="category"> מדינות</label><br>
+        <label><input type="checkbox" value="ספורט" class="category"> ספורט</label><br>
+        <label><input type="checkbox" value="מוזיקה" class="category"> מוזיקה</label><br>
+        <label><input type="checkbox" value="גאוגרפיה" class="category"> גאוגרפיה</label><br>
+        <label><input type="checkbox" value="אמנות ותרבות" class="category"> אמנות ותרבות</label><br>
+        <label><input type="checkbox" value="תחבורה" class="category"> תחבורה</label><br>
+    </div>
+    <h3>הזינו מספר שחקנים:</h3>
+    <input type="number" id="num-players" placeholder=" " min="2" max="10" required>
+    <div id="error-message" class="error"></div>
+    <button id="start-game" disabled>התחל משחק</button>
+
+    <script>
+        const startButton = document.getElementById("start-game");
+        const numPlayersInput = document.getElementById("num-players");
+        const categoryCheckboxes = document.querySelectorAll(".category");
+        const errorMessage = document.getElementById("error-message");
+
+        let selectedCategories = [];
+        let numPlayers = 0;
+
+        // בדיקה אם התנאים להמשך המשחק מתקיימים
+        function validateInputs() {
+            selectedCategories = Array.from(categoryCheckboxes)
+                .filter(checkbox => checkbox.checked)
+                .map(checkbox => checkbox.value);
+            numPlayers = parseInt(numPlayersInput.value, 10);
+
+            if (selectedCategories.length === 0) {
+                errorMessage.textContent = "יש לבחור לפחות קטגוריה אחת.";
+                startButton.disabled = true;
+                return false;
+            }
+
+            if (isNaN(numPlayers) || numPlayers < 2 || numPlayers > 10) {
+                errorMessage.textContent = "יש להזין מספר שחקנים בין 2 ל-10.";
+                startButton.disabled = true;
+                return false;
+            }
+
+            errorMessage.textContent = "";
+            startButton.disabled = false;
+            return true;
+        }
+
+        // האזנה לשינויים בקטגוריות ומספר השחקנים
+        categoryCheckboxes.forEach(checkbox => checkbox.addEventListener("change", validateInputs));
+        numPlayersInput.addEventListener("input", validateInputs);
+
+        // רשימת מילים לדוגמה (לפי הקטגוריות)
+        const categories = {
+            "סרטים": ["מלך האריות", "אלאדין", "שר הטבעות", "הארי פוטר", "משימה בלתי אפשרית"],
+            "מקומות": ["ים המלח", "הכותל המערבי", "פארק הירקון", "מצדה", "קיסריה"],
+            "חיות": ["פיל", "נמר", "אריה", "תוכי", "ג'ירפה"],
+            "מאכלים": ["פיצה", "המבורגר", "שקשוקה", "פלאפל", "סושי"],
+            "מדינות": ["ישראל", "ארצות הברית", "גרמניה", "יפן", "צרפת"],
+            "ספורט": ["כדורגל", "כדורסל", "טניס", "אתלטיקה", "שחייה"],
+            "מוזיקה": ["ביטלס", "אלביס פרסלי", "מוזיקה קלאסית", "פופ", "רוק"],
+            "גאוגרפיה": ["הר האוורסט", "נהר האמזונס", "מדבר סהרה", "ים התיכון", "הרי האלפים"],
+            "אמנות ותרבות": ["מוזיאון הלובר", "פסל החירות", "מוזיקה קלאסית", "פיסול", "ציור שמן"],
+            "תחבורה": ["מטוס", "רכבת תחתית", "אופניים", "מכונית חשמלית", "ספינה"]
+        };
+
+        // לחיצה על "התחל משחק"
+        startButton.addEventListener("click", () => {
+            if (!validateInputs()) return;
+
+            // איסוף מילים מכל הקטגוריות שנבחרו
+            let availableWords = [];
+            selectedCategories.forEach(category => {
+                availableWords = availableWords.concat(categories[category]);
+            });
+
+            // בחירת מילה אקראית
+            const selectedWord = availableWords[Math.floor(Math.random() * availableWords.length)];
+
+            // שמירת הנתונים ב-localStorage
+            localStorage.setItem("numPlayers", numPlayers);
+            localStorage.setItem("selectedWord", selectedWord);
+
+            // מעבר למסך הבא
+            window.location.href = "player_turn.html";
+        });
+    </script>
+</body>
+</html>
