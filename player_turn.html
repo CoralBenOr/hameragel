@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>תור השחקן</title>
     <style>
         body {
@@ -34,6 +34,14 @@
         #next-turn, #main-menu {
             display: none; /* כפתור "המשך" וכפתור "חזור למסך הראשי" מוסתרים בהתחלה */
         }
+
+        /* שינוי צבע למילה שהוגרלה במסך השני */
+        .word-selected {
+            color: white !important; /* נוודא שהצבע יהיה לבן */
+            font-size: 80px; /* גודל טקסט יותר גדול */
+            font-weight: bold;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* הוספתי אפקט צל */
+        }
     </style>
 </head>
 <body>
@@ -62,9 +70,12 @@
 
             // הצגת מידע לשחקן הנוכחי
             playerInfo.style.display = "block";
-            playerInfo.textContent = isSpy 
-                ? "אתה המרגל!" 
-                : `המילה היא: ${word}`;
+            if (isSpy) {
+                playerInfo.textContent = "אתה המרגל!";
+            } else {
+                // הצגת המילה עם class "word-selected"
+                playerInfo.innerHTML = `המילה היא: <span class="word-selected">${word}</span>`;
+            }
 
             // הסתרת כפתור "התחל" והצגת כפתור "המשך"
             startButton.style.display = "none";
