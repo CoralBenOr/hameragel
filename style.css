@@ -1,113 +1,86 @@
-/* עיצוב בסיסי */
+/* CSS Styling for Game Screens */
+
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 20px;
-    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-    color: white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #000000, #000033);
+  color: white;
+}
+
+h1, h2 {
+  margin: 0;
+  text-align: center;
+  color: #ff3333;
 }
 
 h1 {
-    font-size: 36px;
-    color: #e63946;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-size: 2.5rem;
 }
 
-h3 {
-    font-size: 24px;
-    color: #a8dadc;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+h2 {
+  font-size: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 button {
-    margin-top: 20px;
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #457b9d;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, transform 0.2s;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-    background-color: #1d3557;
-    transform: scale(1.05);
+  background-color: #005bb5;
+  transform: scale(1.1);
 }
 
-input[type="number"] {
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #a8dadc;
-    width: 80px;
-    margin: 10px 0;
-}
-
-label {
-    font-size: 20px;
-    color: #f1faee;
-    display: block;
-    margin: 5px 0;
-}
-
-/* עיצוב לטלפונים ניידים */
+/* Responsive Styling */
 @media (max-width: 768px) {
-    body {
-        font-size: 18px;
-        padding: 10px;
-    }
+  body {
+    font-size: 16px;
+  }
 
-    h1 {
-        font-size: 28px;
-    }
+  h1 {
+    font-size: 2rem;
+  }
 
-    h3 {
-        font-size: 20px;
-    }
+  h2 {
+    font-size: 1.8rem;
+  }
 
-    button {
-        font-size: 16px;
-        padding: 12px 24px;
-    }
-
-    input[type="number"] {
-        font-size: 16px;
-        padding: 8px;
-    }
-
-    label {
-        font-size: 16px;
-    }
+  button {
+    padding: 15px 25px;
+    font-size: 1rem;
+  }
 }
 
-/* עיצוב למסכים קטנים במיוחד */
-@media (max-width: 480px) {
-    body {
-        font-size: 16px;
-    }
+/* Styling for the Player Screen */
+.player-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 
-    h1 {
-        font-size: 24px;
-    }
+.player-screen h1 {
+  font-size: 3rem;
+  color: #00ccff;
+}
 
-    h3 {
-        font-size: 18px;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 10px 20px;
-    }
-
-    input[type="number"] {
-        font-size: 14px;
-        padding: 6px;
-    }
-
-    label {
-        font-size: 14px;
-    }
+.player-screen p {
+  font-size: 2rem;
+  text-align: center;
+  color: white;
 }
