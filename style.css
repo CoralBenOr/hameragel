@@ -20,7 +20,7 @@ h1, h3 {
 
 /* כותרת ראשית */
 h1 {
-    font-size: 48px; /* הגדלת גודל הכותרת */
+    font-size: 70px; /* הגדלת גודל הכותרת */
     font-weight: bold;
     color: white;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
@@ -38,8 +38,8 @@ button {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 20px 40px; /* הגדלת הרוחב והגובה של הכפתורים */
-    font-size: 28px; /* הגדלת גודל הגופן */
+    padding: 25px 45px; /* הגדלת הרוחב והגובה של הכפתורים */
+    font-size: 35px; /* הגדלת גודל הגופן */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -57,18 +57,18 @@ button:disabled {
 /* רשימות קטגוריות */
 .category-container {
     text-align: left;
-    margin-top: 20px;
+    margin-top: 30px;
     width: 80%;
 }
 
 label {
     display: block;
-    font-size: 28px; /* הגדלת גודל כותרת כל שדה */
-    margin: 10px 0;
+    font-size: 35px; /* הגדלת גודל כותרת כל שדה */
+    margin: 15px 0;
 }
 
 input[type="checkbox"] {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 input[type="number"] {
@@ -109,7 +109,7 @@ input:focus, select:focus {
 /* שינוי צבע למילה שהוגרלה במסך השני */
 .word-selected {
     color: white !important; /* נוודא שהצבע יהיה לבן */
-    font-size: 100px; /* גודל טקסט יותר גדול */
+    font-size: 70px; /* גודל טקסט יותר גדול */
     font-weight: bold;
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* הוספתי אפקט צל */
 }
