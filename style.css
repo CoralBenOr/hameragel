@@ -81,25 +81,23 @@ button:hover {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 100%; /* וודא שהרוחב מלא */
+  text-align: center;
 }
 
 .player-screen h1 {
   font-size: 3rem;
   color: #00ccff;
+  margin-bottom: 20px; /* הוספתי רווח מתחת לכותרת */
 }
 
 .player-screen p {
   font-size: 2rem;
-  text-align: center;
   color: white;
+  margin-top: 10px; /* הוספתי רווח למעלה */
 }
 
-/* תיקון לחלוקה מיותרת במסך השני */
-.player-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  text-align: center;
+/* אם יש צורך בהגדרה לכל אלמנט בממשק */
+.container > * {
+  margin-bottom: 20px; /* הוספתי רווח בין האלמנטים */
 }
