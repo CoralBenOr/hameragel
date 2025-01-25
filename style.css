@@ -68,8 +68,11 @@ label {
 
 input[type="checkbox"] {
     margin-right: 20px; /* הגדלתי את הריווח */
+    width: 30px; /* הגדלתי את גודל הקוביה */
+    height: 30px; /* הגדלתי את גובה הקוביה */
 }
 
+/* קלט מספרי */
 input[type="number"] {
     padding: 20px; /* הגדלתי את הריווח */
     font-size: 26px; /* הגדלתי את גודל הפונט */
@@ -108,7 +111,7 @@ input:focus, select:focus {
 /* שינוי צבע למילה שהוגרלה במסך השני */
 #word-selected {
     color: white; /* הופך את הטקסט ללבן */
-    font-size: 48px; /* גודל טקסט יותר גדול */
+    font-size: 60px; /* גודל טקסט יותר גדול */
     font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* הוספתי אפקט צל */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.7); /* הוספתי אפקט צל */
 }
